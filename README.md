@@ -13,6 +13,50 @@ Start-Transcript
 Install Version of PowerShell
 * $PSVersionTable.PSVersion
 
+## Running a PowerShell script on a schedule 
+
+### Windows Task Scheduler (Windows)
+
+### Cron Job (Linux)
+A scheduled task that runs regularly.
+
+Time-based job scheduler in Unix-like operating systems 
+
+* Install cron
+apt-get install cron 
+
+* check if  cron is running
+systemctl status cron
+
+#### Setup a cron job
+view cron jobs - gedit /etc/crontab
+
+crontab -e : edit/add cron jobs
+
+crontab -l : see cron jobs
+
+5 21 * * * /home/marco/develop/powershell-starter/helloWorld.ps1
+
+pwsh &  /home/marco/develop/powershell-starter/helloWorld.ps1
+
+### Syntax
+* * * * * /path/to/command arg1 arg2
+
+* First *  | minutes 0-59
+* Second * | hour 0-23
+* Third *  | day 0-31
+* Fourth * | month 0-12
+* Fifth *  | day of the week 0-7
+
+### Cron Logs
+* /var/log
+
+* gedit cron
+
+* search for cron 
+#### References
+[Getting started with cron jobs](https://www.geeksforgeeks.org/how-to-setup-cron-jobs-in-ubuntu/)
+
 ## Functions
 {verb}-{noun}
 * Write-Host
